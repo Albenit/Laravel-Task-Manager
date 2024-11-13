@@ -26,7 +26,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return back()->with('fail','Kredencialet e gabuara');
+        return back()->with('fail','Wrong Credentials!!!');
     }
 
     public function register(RegisterRequest $request){
