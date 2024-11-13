@@ -19,7 +19,10 @@ Route::middleware(Authenticate::class)->group(function(){
     Route::get('/dashboard',[UserController::class,'dashboard'])->name('dashboard');
 
     Route::prefix('task')->group(function(){
+        Route::get('/{id}',[TaskController::class,'getTaskById']);
         Route::post('/store',[TaskController::class,'store']);
+        Route::put('/update/{id}',[TaskController::class,'update'])->name('task/update');
+        Route::delete('/delete/{id}',[TaskController::class,'delete'])->name('task/delete');
     });
 });
 
