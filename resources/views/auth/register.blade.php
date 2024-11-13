@@ -8,9 +8,6 @@
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
               <h3 class="mb-5">Sign Up</h3>
-              @if($errors->any())
-                    {{ implode('', $errors->all('<div>:message</div>')) }}
-                @endif
               <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="form-outline mb-4">
