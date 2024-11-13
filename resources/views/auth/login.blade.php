@@ -1,4 +1,5 @@
-@extends('includes.header')
+@extends('includes.app')
+@section('title','Sign in')
 @section('content')
 <section class="vh-100">
     <div class="container py-5 h-100">
