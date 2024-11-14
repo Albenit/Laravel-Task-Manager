@@ -71,16 +71,55 @@
                     <h5>Tasks</h5>
                 </div>
                 <div class="col-6">
-                    <div class="text-end">
-                        <button type="button" class="btn btn-info" style="color: white" data-bs-toggle="modal"
-                            data-bs-target="#newTaskModal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                class="bi bi-plus-lg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
-                            </svg>
-                        </button>
+                    <div class="row justify-content-end">
+                        <div class="col-1 me-3">
+                            <button type="button" class="btn btn-info" style="color: white" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
+                                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z"/>
+                                  </svg>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <form action="{{ route('dashboard') }}" class="mb-0">
+                                    <div class="mx-3">
+                                        <div class="mb-2">
+                                            <label for="status">Status</label>
+                                            <select name="status" id="status" class="form-select">
+                                                <option value="" {{ ($status == null) ? 'selected' : '' }}></option>
+                                                <option value="0" {{ ($status == "0") ? 'selected' : '' }}>Unfinished</option>
+                                                <option value="1" {{ ($status == "1") ? 'selected' : '' }}>Finished</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="priority">Priority</label>
+                                            <select name="priority" id="priority" class="form-select">
+                                                <option value="" {{ ($priority == null) ? 'selected' : '' }}></option>
+                                                <option value="1"{{ ($priority == "1") ? 'selected' : '' }}>High</option>
+                                                <option value="2" {{ ($priority == "2") ? 'selected' : '' }}>Average</option>
+                                                <option value="3" {{ ($priority == "3") ? 'selected' : '' }}>Low</option>
+                                                <option value="0" {{ ($priority == "0") ? 'selected' : '' }}>Non Priority</option>
+                                            </select>
+                                        </div>
+                                        <div class="text-center">
+                                            <input class="btn btn-info w-100" type="submit" value="Filter" style="color:white">
+                                        </div>
+                                    </div>
+                                </form>
+                              </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="text-end">
+                                <button type="button" class="btn btn-info" style="color: white" data-bs-toggle="modal"
+                                    data-bs-target="#newTaskModal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
